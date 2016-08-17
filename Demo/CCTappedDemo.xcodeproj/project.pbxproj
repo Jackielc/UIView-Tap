@@ -1,0 +1,540 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		04F1F4101D63FBCB00985C3D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F1F40F1D63FBCB00985C3D /* main.m */; };
+		04F1F4131D63FBCB00985C3D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F1F4121D63FBCB00985C3D /* AppDelegate.m */; };
+		04F1F4161D63FBCB00985C3D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F1F4151D63FBCB00985C3D /* ViewController.m */; };
+		04F1F4191D63FBCB00985C3D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04F1F4171D63FBCB00985C3D /* Main.storyboard */; };
+		04F1F41B1D63FBCB00985C3D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04F1F41A1D63FBCB00985C3D /* Assets.xcassets */; };
+		04F1F41E1D63FBCB00985C3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04F1F41C1D63FBCB00985C3D /* LaunchScreen.storyboard */; };
+		04F1F4291D63FBCB00985C3D /* CCTappedDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F1F4281D63FBCB00985C3D /* CCTappedDemoTests.m */; };
+		04F1F4341D63FBCB00985C3D /* CCTappedDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F1F4331D63FBCB00985C3D /* CCTappedDemoUITests.m */; };
+		04F1F4471D63FDBF00985C3D /* UIView+TappedBlcok.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F1F4461D63FDBF00985C3D /* UIView+TappedBlcok.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		04F1F4251D63FBCB00985C3D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04F1F4031D63FBCB00985C3D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 04F1F40A1D63FBCB00985C3D;
+			remoteInfo = CCTappedDemo;
+		};
+		04F1F4301D63FBCB00985C3D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04F1F4031D63FBCB00985C3D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 04F1F40A1D63FBCB00985C3D;
+			remoteInfo = CCTappedDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		04F1F40B1D63FBCB00985C3D /* CCTappedDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CCTappedDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		04F1F40F1D63FBCB00985C3D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		04F1F4111D63FBCB00985C3D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		04F1F4121D63FBCB00985C3D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		04F1F4141D63FBCB00985C3D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		04F1F4151D63FBCB00985C3D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		04F1F4181D63FBCB00985C3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		04F1F41A1D63FBCB00985C3D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		04F1F41D1D63FBCB00985C3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		04F1F41F1D63FBCB00985C3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04F1F4241D63FBCB00985C3D /* CCTappedDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CCTappedDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		04F1F4281D63FBCB00985C3D /* CCTappedDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CCTappedDemoTests.m; sourceTree = "<group>"; };
+		04F1F42A1D63FBCB00985C3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04F1F42F1D63FBCB00985C3D /* CCTappedDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CCTappedDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		04F1F4331D63FBCB00985C3D /* CCTappedDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CCTappedDemoUITests.m; sourceTree = "<group>"; };
+		04F1F4351D63FBCB00985C3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04F1F4451D63FDBF00985C3D /* UIView+TappedBlcok.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+TappedBlcok.h"; sourceTree = "<group>"; };
+		04F1F4461D63FDBF00985C3D /* UIView+TappedBlcok.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+TappedBlcok.m"; sourceTree = "<group>"; };
+		04F1F4481D64152F00985C3D /* CCTapped.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCTapped.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		04F1F4081D63FBCB00985C3D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04F1F4211D63FBCB00985C3D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04F1F42C1D63FBCB00985C3D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		04F1F4021D63FBCB00985C3D = {
+			isa = PBXGroup;
+			children = (
+				04F1F40D1D63FBCB00985C3D /* CCTappedDemo */,
+				04F1F4271D63FBCB00985C3D /* CCTappedDemoTests */,
+				04F1F4321D63FBCB00985C3D /* CCTappedDemoUITests */,
+				04F1F40C1D63FBCB00985C3D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		04F1F40C1D63FBCB00985C3D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				04F1F40B1D63FBCB00985C3D /* CCTappedDemo.app */,
+				04F1F4241D63FBCB00985C3D /* CCTappedDemoTests.xctest */,
+				04F1F42F1D63FBCB00985C3D /* CCTappedDemoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		04F1F40D1D63FBCB00985C3D /* CCTappedDemo */ = {
+			isa = PBXGroup;
+			children = (
+				04F1F4411D63FD1500985C3D /* CCTapped */,
+				04F1F4111D63FBCB00985C3D /* AppDelegate.h */,
+				04F1F4121D63FBCB00985C3D /* AppDelegate.m */,
+				04F1F4141D63FBCB00985C3D /* ViewController.h */,
+				04F1F4151D63FBCB00985C3D /* ViewController.m */,
+				04F1F4171D63FBCB00985C3D /* Main.storyboard */,
+				04F1F41A1D63FBCB00985C3D /* Assets.xcassets */,
+				04F1F41C1D63FBCB00985C3D /* LaunchScreen.storyboard */,
+				04F1F41F1D63FBCB00985C3D /* Info.plist */,
+				04F1F40E1D63FBCB00985C3D /* Supporting Files */,
+			);
+			path = CCTappedDemo;
+			sourceTree = "<group>";
+		};
+		04F1F40E1D63FBCB00985C3D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				04F1F40F1D63FBCB00985C3D /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		04F1F4271D63FBCB00985C3D /* CCTappedDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				04F1F4281D63FBCB00985C3D /* CCTappedDemoTests.m */,
+				04F1F42A1D63FBCB00985C3D /* Info.plist */,
+			);
+			path = CCTappedDemoTests;
+			sourceTree = "<group>";
+		};
+		04F1F4321D63FBCB00985C3D /* CCTappedDemoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				04F1F4331D63FBCB00985C3D /* CCTappedDemoUITests.m */,
+				04F1F4351D63FBCB00985C3D /* Info.plist */,
+			);
+			path = CCTappedDemoUITests;
+			sourceTree = "<group>";
+		};
+		04F1F4411D63FD1500985C3D /* CCTapped */ = {
+			isa = PBXGroup;
+			children = (
+				04F1F4481D64152F00985C3D /* CCTapped.h */,
+				04F1F4451D63FDBF00985C3D /* UIView+TappedBlcok.h */,
+				04F1F4461D63FDBF00985C3D /* UIView+TappedBlcok.m */,
+			);
+			path = CCTapped;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		04F1F40A1D63FBCB00985C3D /* CCTappedDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04F1F4381D63FBCB00985C3D /* Build configuration list for PBXNativeTarget "CCTappedDemo" */;
+			buildPhases = (
+				04F1F4071D63FBCB00985C3D /* Sources */,
+				04F1F4081D63FBCB00985C3D /* Frameworks */,
+				04F1F4091D63FBCB00985C3D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CCTappedDemo;
+			productName = CCTappedDemo;
+			productReference = 04F1F40B1D63FBCB00985C3D /* CCTappedDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		04F1F4231D63FBCB00985C3D /* CCTappedDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04F1F43B1D63FBCB00985C3D /* Build configuration list for PBXNativeTarget "CCTappedDemoTests" */;
+			buildPhases = (
+				04F1F4201D63FBCB00985C3D /* Sources */,
+				04F1F4211D63FBCB00985C3D /* Frameworks */,
+				04F1F4221D63FBCB00985C3D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				04F1F4261D63FBCB00985C3D /* PBXTargetDependency */,
+			);
+			name = CCTappedDemoTests;
+			productName = CCTappedDemoTests;
+			productReference = 04F1F4241D63FBCB00985C3D /* CCTappedDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		04F1F42E1D63FBCB00985C3D /* CCTappedDemoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04F1F43E1D63FBCB00985C3D /* Build configuration list for PBXNativeTarget "CCTappedDemoUITests" */;
+			buildPhases = (
+				04F1F42B1D63FBCB00985C3D /* Sources */,
+				04F1F42C1D63FBCB00985C3D /* Frameworks */,
+				04F1F42D1D63FBCB00985C3D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				04F1F4311D63FBCB00985C3D /* PBXTargetDependency */,
+			);
+			name = CCTappedDemoUITests;
+			productName = CCTappedDemoUITests;
+			productReference = 04F1F42F1D63FBCB00985C3D /* CCTappedDemoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		04F1F4031D63FBCB00985C3D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = jack;
+				TargetAttributes = {
+					04F1F40A1D63FBCB00985C3D = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					04F1F4231D63FBCB00985C3D = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 04F1F40A1D63FBCB00985C3D;
+					};
+					04F1F42E1D63FBCB00985C3D = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 04F1F40A1D63FBCB00985C3D;
+					};
+				};
+			};
+			buildConfigurationList = 04F1F4061D63FBCB00985C3D /* Build configuration list for PBXProject "CCTappedDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 04F1F4021D63FBCB00985C3D;
+			productRefGroup = 04F1F40C1D63FBCB00985C3D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				04F1F40A1D63FBCB00985C3D /* CCTappedDemo */,
+				04F1F4231D63FBCB00985C3D /* CCTappedDemoTests */,
+				04F1F42E1D63FBCB00985C3D /* CCTappedDemoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		04F1F4091D63FBCB00985C3D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04F1F41E1D63FBCB00985C3D /* LaunchScreen.storyboard in Resources */,
+				04F1F41B1D63FBCB00985C3D /* Assets.xcassets in Resources */,
+				04F1F4191D63FBCB00985C3D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04F1F4221D63FBCB00985C3D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04F1F42D1D63FBCB00985C3D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		04F1F4071D63FBCB00985C3D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04F1F4471D63FDBF00985C3D /* UIView+TappedBlcok.m in Sources */,
+				04F1F4161D63FBCB00985C3D /* ViewController.m in Sources */,
+				04F1F4131D63FBCB00985C3D /* AppDelegate.m in Sources */,
+				04F1F4101D63FBCB00985C3D /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04F1F4201D63FBCB00985C3D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04F1F4291D63FBCB00985C3D /* CCTappedDemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04F1F42B1D63FBCB00985C3D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04F1F4341D63FBCB00985C3D /* CCTappedDemoUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		04F1F4261D63FBCB00985C3D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 04F1F40A1D63FBCB00985C3D /* CCTappedDemo */;
+			targetProxy = 04F1F4251D63FBCB00985C3D /* PBXContainerItemProxy */;
+		};
+		04F1F4311D63FBCB00985C3D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 04F1F40A1D63FBCB00985C3D /* CCTappedDemo */;
+			targetProxy = 04F1F4301D63FBCB00985C3D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		04F1F4171D63FBCB00985C3D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				04F1F4181D63FBCB00985C3D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		04F1F41C1D63FBCB00985C3D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				04F1F41D1D63FBCB00985C3D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		04F1F4361D63FBCB00985C3D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		04F1F4371D63FBCB00985C3D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		04F1F4391D63FBCB00985C3D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = CCTappedDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "rt-mart.CCTappedDemo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		04F1F43A1D63FBCB00985C3D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = CCTappedDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "rt-mart.CCTappedDemo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		04F1F43C1D63FBCB00985C3D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = CCTappedDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "rt-mart.CCTappedDemoTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CCTappedDemo.app/CCTappedDemo";
+			};
+			name = Debug;
+		};
+		04F1F43D1D63FBCB00985C3D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = CCTappedDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "rt-mart.CCTappedDemoTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CCTappedDemo.app/CCTappedDemo";
+			};
+			name = Release;
+		};
+		04F1F43F1D63FBCB00985C3D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = CCTappedDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "rt-mart.CCTappedDemoUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = CCTappedDemo;
+			};
+			name = Debug;
+		};
+		04F1F4401D63FBCB00985C3D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = CCTappedDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "rt-mart.CCTappedDemoUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = CCTappedDemo;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		04F1F4061D63FBCB00985C3D /* Build configuration list for PBXProject "CCTappedDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04F1F4361D63FBCB00985C3D /* Debug */,
+				04F1F4371D63FBCB00985C3D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04F1F4381D63FBCB00985C3D /* Build configuration list for PBXNativeTarget "CCTappedDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04F1F4391D63FBCB00985C3D /* Debug */,
+				04F1F43A1D63FBCB00985C3D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04F1F43B1D63FBCB00985C3D /* Build configuration list for PBXNativeTarget "CCTappedDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04F1F43C1D63FBCB00985C3D /* Debug */,
+				04F1F43D1D63FBCB00985C3D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04F1F43E1D63FBCB00985C3D /* Build configuration list for PBXNativeTarget "CCTappedDemoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04F1F43F1D63FBCB00985C3D /* Debug */,
+				04F1F4401D63FBCB00985C3D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 04F1F4031D63FBCB00985C3D /* Project object */;
+}
