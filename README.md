@@ -1,5 +1,5 @@
 # CCTapped
-对常用视图控件添加点击事件(UIButton、UILabel、UIImageView、UITextField.......)
+快速对常用视图控件添加点击事件(UIButton、UILabel、UIImageView、UITextField.......)
 
 Why?
 ===
