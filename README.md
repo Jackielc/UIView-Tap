@@ -1,7 +1,11 @@
 # CCTapped
-对常用视图控件添加点击事件，之前看过一个对手势进行封装的一个开源库，感觉写的不错，今天自己又整理了一下思路，完成了本项目。
+对常用视图控件添加点击事件(UIButton、UILabel、UIImageView、UITextField.......)
 
-Clone CCTapeped 导入你的项目
+Why?
+===
+以前做项目的时候对一个视图添加点击事件很繁琐,并且之前看过一个类似的一个开源库，感觉写的不错，今天自己又整理了一下思路，完成了本项目。
+
+Clone CCTapeped 并导入你的项目
 ===
 
 ```objective-c
@@ -9,6 +13,8 @@ Clone CCTapeped 导入你的项目
 ```
 ```objective-c
 
+使用
+===
 @interface UIView (TappedBlcok)
 
 - (void)whenTapped:(CCTappedBlock)block;            //单击
@@ -20,3 +26,25 @@ Clone CCTapeped 导入你的项目
 
 @end
 ```
+如何使用
+===
+UIButton以前的写法
+---
+```objective-c
+    [button addTarget:self action:@selector(click ) forControlEvents:UIControlEventTouchUpInside];
+
+    #pragma mark event
+    -(void)click
+```
+现在
+---
+```objective-c
+     [button whenTapped:^{
+        
+    }];
+```
+
+
+
+
+
