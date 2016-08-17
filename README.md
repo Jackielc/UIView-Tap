@@ -26,8 +26,6 @@ Clone CCTapeped 并导入你的项目
 
 @end
 
-ALL
----
     [view whenTapped:^{
         NSLog(@"单击");
     }];
