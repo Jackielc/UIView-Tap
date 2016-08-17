@@ -11,10 +11,10 @@ Clone CCTapeped 并导入你的项目
 ```objective-c
 #import "CCTapped.h"
 ```
-```objective-c
 
 使用
 ===
+```objective-c
 @interface UIView (TappedBlcok)
 
 - (void)whenTapped:(CCTappedBlock)block;            //单击
@@ -25,6 +25,10 @@ Clone CCTapeped 并导入你的项目
 - (void)whenTouchUp:(CCTappedBlock)block;           //结束点击时
 
 @end
+```
+UIButton、UILabel、UIImageView、UITextField.......
+---
+```objective-c
 
     [view whenTapped:^{
         NSLog(@"单击");
