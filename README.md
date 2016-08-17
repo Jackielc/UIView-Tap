@@ -25,6 +25,28 @@ Clone CCTapeped 并导入你的项目
 - (void)whenTouchUp:(CCTappedBlock)block;           //结束点击时
 
 @end
+
+ALL
+---
+    [view whenTapped:^{
+        NSLog(@"单击");
+    }];
+    
+    [view whenDoubleTapped:^{
+        NSLog(@"双击");
+    }];
+    
+    [view whenLongPress:^{
+        NSLog(@"长按");
+    }];
+    
+    [view whenTouchUp:^{
+        NSLog(@"即将离开");
+    }];
+    
+    [view whenTouchDown:^{
+        NSLog(@"即将按下");
+    }];
 ```
 More
 ===
