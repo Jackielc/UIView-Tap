@@ -26,7 +26,7 @@ Clone CCTapeped 并导入你的项目
 
 @end
 ```
-如何使用
+More
 ===
 UIButton以前的写法
 ---
@@ -39,11 +39,12 @@ UIButton以前的写法
 现在
 ---
 ```objective-c
-     [button whenTapped:^{
+    [button whenTapped:^{
         
     }];
 ```
-
+欢迎Star
+===
 
 
 
