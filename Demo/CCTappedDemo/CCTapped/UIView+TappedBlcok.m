@@ -86,7 +86,6 @@ static char CCLongPressBlockKey;
 }
 
 
-
 #pragma mark - CallBacks
 - (void)singleTap
 {

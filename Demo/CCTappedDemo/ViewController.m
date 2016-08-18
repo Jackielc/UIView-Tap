@@ -15,29 +15,35 @@
 
 @implementation ViewController
 
+#pragma mark event
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    UILabel *label = [[UILabel alloc]initWithFrame:self.view.frame];
+    UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 100, 30)];
+    label.backgroundColor = [UIColor lightGrayColor];
+    label.textAlignment = NSTextAlignmentCenter;
+    label.center = self.view.center;
+    label.layer.cornerRadius = 15;
+    label.layer.masksToBounds = YES;
     [self.view addSubview:label];
     [label whenTapped:^{
-        NSLog(@"单击");
+        label.text = @"单击";
     }];
     
     [label whenDoubleTapped:^{
-        NSLog(@"双击");
+        label.text = @"双击";
     }];
     
     [label whenLongPress:^{
-        NSLog(@"长按");
+        label.text = @"长按";
     }];
     
     [label whenTouchUp:^{
-        NSLog(@"即将离开");
+        label.text = @"即将离开";
     }];
     
     [label whenTouchDown:^{
-        NSLog(@"即将按下");
+        label.text = @"即将按下";
     }];
     // Do any additional setup after loading the view, typically from a nib.
 }
