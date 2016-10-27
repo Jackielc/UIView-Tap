@@ -9,6 +9,44 @@
 #import "UIView+TappedBlcok.h"
 #import <objc/runtime.h>
 
+#pragma mark - 解决手势冲突
+//在单击和双击手势时,由于手势的触发条件会有重合,有些情况下会产生冲突,无法达到满意的效果,利用 requireGestureRecognizerToFail 的方法指定某个手势确定失效之后才会触发本次手势，即使本次手势的触发条件已经满足
+static inline void requireSingleTapsRecognizer(UIGestureRecognizer *recognizer,UIView *target)
+{
+    for (UIGestureRecognizer *gesture in target.gestureRecognizers) {
+        if ([gesture isKindOfClass:[UITapGestureRecognizer class]]) {
+            UITapGestureRecognizer *tap = (UITapGestureRecognizer *)gesture;
+            if (tap.numberOfTouchesRequired==1&tap.numberOfTapsRequired == 1) {
+                [tap requireGestureRecognizerToFail:recognizer];
+            }
+        }
+    }
+}
+
+static inline void requireDoubleTapsRecognizer(UIGestureRecognizer *recognizer,UIView *target)
+{
+    for (UIGestureRecognizer *gesture in target.gestureRecognizers) {
+        if ([gesture isKindOfClass:[UITapGestureRecognizer class]]) {
+            UITapGestureRecognizer *tap = (UITapGestureRecognizer *)gesture;
+            if (tap.numberOfTapsRequired == 2&tap.numberOfTouchesRequired == 1) {
+                [tap requireGestureRecognizerToFail:recognizer];
+            }
+        }
+    }
+}
+
+
+static inline void requireLongPressTecognizer(UIGestureRecognizer *recognizer,UIView *target)
+{
+    for (UIGestureRecognizer *gesture in target.gestureRecognizers){
+        if ([gesture isKindOfClass:[UILongPressGestureRecognizer class]]) {
+            UILongPressGestureRecognizer *longPress = (UILongPressGestureRecognizer *)gesture;
+            [longPress requireGestureRecognizerToFail:recognizer];
+        }
+    }
+}
+
+@implementation UIView (TappedBlcok)
 //关键字为void*指针（任意类型指针）,每一个关联的关键字必须是唯一的，通常采用静态变量来作为关键字
 static char CCSingleTapBlockKey;
 static char CCDoubleTapBlockKey;
@@ -17,34 +55,67 @@ static char CCTouchDownTapBlockKey;
 static char CCTouchUpTapBlcokKey;
 static char CCLongPressBlockKey;
 
-@interface UIView (CCTapPrivates)
+#pragma mark - 添加block属性
+//获取关联对象
+- (void)makeBlockForkey:(void *)key
+{
+    CCTappedBlock block = objc_getAssociatedObject(self, key);
+    if (block) block();
+}
 
-- (void)requireSingleTapsRecognizer:(UIGestureRecognizer *)recognizer;
-- (void)requireDoubleTapsRecognizer:(UIGestureRecognizer *)recognizer;
-- (void)requireLongPressTecognizer:(UIGestureRecognizer *)recognizer;
-- (UITapGestureRecognizer *)addTapRecognizerWithTaps:(NSUInteger)taps touches:(NSUInteger)touches sel:(SEL)sel;
-- (UILongPressGestureRecognizer *)addLongPressRecognizerWithTouches:(NSUInteger)touches sel:(SEL)sel;
+//创建关联
+- (void)setBlockForKey:(void *)key block:(CCTappedBlock)block
+{
+    self.userInteractionEnabled = YES;
+    objc_setAssociatedObject(self, key, block, OBJC_ASSOCIATION_COPY_NONATOMIC);
+}
 
-- (void)returnBlockForkey:(void *)key;
-- (void)setBlockForKey:(void *)key block:(CCTappedBlock)block;
+#pragma mark - CallBacks
+- (void)singleTap
+{
+    [self makeBlockForkey:&CCSingleTapBlockKey];
+}
 
-@end
+- (void)doubleTap
+{
+    [self makeBlockForkey:&CCDoubleTapBlockKey];
+}
 
-@implementation UIView (TappedBlcok)
+- (void)doubleFingerTap
+{
+    [self makeBlockForkey:&CCDoubleFingerTapBlockKey];
+}
+
+- (void)longPress:(UILongPressGestureRecognizer *)sender
+{
+    if (sender.state == UIGestureRecognizerStateBegan)[self makeBlockForkey:&CCLongPressBlockKey];
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    [super touchesBegan:touches withEvent:event];
+    [self makeBlockForkey:&CCTouchDownTapBlockKey];
+}
+
+- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    [super touchesEnded:touches withEvent:event];
+    [self makeBlockForkey:&CCTouchUpTapBlcokKey];
+}
 
 #pragma mark -Taps
 - (void)whenTapped:(CCTappedBlock)block
 {
     UITapGestureRecognizer *tap = [self addTapRecognizerWithTaps:1 touches:1 sel:@selector(singleTap)];
-    [self requireDoubleTapsRecognizer:tap];
-    [self requireLongPressTecognizer:tap];
+    requireDoubleTapsRecognizer(tap,self);
+    requireLongPressTecognizer(tap,self);
     [self setBlockForKey:&CCSingleTapBlockKey block:block];
 }
 
 - (void)whenDoubleTapped:(CCTappedBlock)block
 {
     UITapGestureRecognizer *tap = [self addTapRecognizerWithTaps:2 touches:1 sel:@selector(doubleTap)];
-    [self requireSingleTapsRecognizer:tap];
+    requireSingleTapsRecognizer(tap,self);
     [self setBlockForKey:&CCDoubleTapBlockKey block:block];
 }
 
@@ -68,91 +139,6 @@ static char CCLongPressBlockKey;
 - (void)whenTouchUp:(CCTappedBlock)block
 {
     [self setBlockForKey:&CCTouchUpTapBlcokKey block:block];
-}
-
-#pragma mark - 添加block属性
-//获取关联对象
-- (void)returnBlockForkey:(void *)key
-{
-    CCTappedBlock block = objc_getAssociatedObject(self, key);
-    if (block) block();
-}
-
-//创建关联
-- (void)setBlockForKey:(void *)key block:(CCTappedBlock)block
-{
-    self.userInteractionEnabled = YES;
-    objc_setAssociatedObject(self, key, block, OBJC_ASSOCIATION_COPY_NONATOMIC);
-}
-
-
-
-#pragma mark - CallBacks
-- (void)singleTap
-{
-    [self returnBlockForkey:&CCSingleTapBlockKey];
-}
-
-- (void)doubleTap
-{
-    [self returnBlockForkey:&CCDoubleTapBlockKey];
-}
-
-- (void)doubleFingerTap
-{
-    [self returnBlockForkey:&CCDoubleFingerTapBlockKey];
-}
-
-- (void)longPress:(UILongPressGestureRecognizer *)sender
-{
-    if (sender.state == UIGestureRecognizerStateBegan)[self returnBlockForkey:&CCLongPressBlockKey];}
-
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
-{
-    [super touchesBegan:touches withEvent:event];
-    [self returnBlockForkey:&CCTouchDownTapBlockKey];
-}
-
-- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
-{
-    [super touchesEnded:touches withEvent:event];
-    [self returnBlockForkey:&CCTouchUpTapBlcokKey];
-}
-
-#pragma mark - 解决手势冲突
-//在单击和双击手势时,由于手势的触发条件会有重合,有些情况下会产生冲突,无法达到满意的效果,利用 requireGestureRecognizerToFail 的方法指定某个手势确定失效之后才会触发本次手势，即使本次手势的触发条件已经满足
-- (void)requireSingleTapsRecognizer:(UIGestureRecognizer *)recognizer
-{
-    for (UIGestureRecognizer *gesture in self.gestureRecognizers) {
-        if ([gesture isKindOfClass:[UITapGestureRecognizer class]]) {
-            UITapGestureRecognizer *tap = (UITapGestureRecognizer *)gesture;
-            if (tap.numberOfTouchesRequired==1&tap.numberOfTapsRequired == 1) {
-                [tap requireGestureRecognizerToFail:recognizer];
-            }
-        }
-    }
-}
-
-- (void)requireDoubleTapsRecognizer:(UIGestureRecognizer *)recognizer
-{
-    for (UIGestureRecognizer *gesture in self.gestureRecognizers) {
-        if ([gesture isKindOfClass:[UITapGestureRecognizer class]]) {
-            UITapGestureRecognizer *tap = (UITapGestureRecognizer *)gesture;
-            if (tap.numberOfTapsRequired == 2&tap.numberOfTouchesRequired == 1) {
-                [tap requireGestureRecognizerToFail:recognizer];
-            }
-        }
-    }
-}
-
-- (void)requireLongPressTecognizer:(UIGestureRecognizer *)recognizer
-{
-    for (UIGestureRecognizer *gesture in self.gestureRecognizers) {
-        if ([gesture isKindOfClass:[UILongPressGestureRecognizer class]]) {
-            UILongPressGestureRecognizer *longPress = (UILongPressGestureRecognizer *)gesture;
-            [longPress requireGestureRecognizerToFail:recognizer];
-        }
-    }
 }
 
 #pragma mark - 添加手势
